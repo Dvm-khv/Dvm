@@ -1,0 +1,22 @@
+<?
+    $roistatData = array(
+        'roistat' => isset($_COOKIE['roistat_visit']) ? $_COOKIE['roistat_visit'] : null,
+        'key'     => 'TgxMTYwOjEwNzQzODhiNmZiZDFhNjVhMzBiODNmNzMTo4Mzc3MMzMmY4YzYzMg==', 
+        'title'   => 'Тест Роистат / '.$data, 
+        'comment' => 'Комментарий'.$data, 
+        'name'    => 'Иван'.$data, 
+        'email'   => 'test2@test.test'.$data, 
+        'phone'   => '+77777727371'.$data, 
+        'is_need_callback' => '0', 
+        'callback_phone' => '<Номер для переопределения>',
+        'sync'    => '0',
+        'is_need_check_order_in_processing' => '1',
+        'is_need_check_order_in_processing_append' => '1',
+        'fields'  => array(
+            'OPPORTUNITY' => 123,
+            'Источник Лида'=> 'Гугл',
+            'Товарная КАТЕГОРИЯ'=> 'Двери Аргус/Браво',
+            "charset" => "utf-8",
+        ),
+    );
+    file_get_contents("https://cloud.roistat.com/api/proxy/1.0/leads/add?" . http_build_query($roistatData));
